@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Input;
 using ExternalLib;
 using GameOfLife.Common;
@@ -77,7 +78,7 @@ namespace GameOfLife.ViewModel
         private void RemovePetriDish()
         {
             var removedDish = petriDishesCollection.RemoveLast();
-            // removedDish.Dispose(); //fix MainScreenViewModelTest.RemovePetriDish
+            removedDish.Dispose(); //fix MainScreenViewModelTest.RemovePetriDish
         }
 
         private void OneStep()
@@ -185,7 +186,8 @@ namespace GameOfLife.ViewModel
 
         public void Dispose()
         {
-            //     Settings.Instance.SizeChanged -= SettingsOnSizeChanged; // fix MainScreenViewModelTest.NoObjectsLeakedOnEventHandler and AllObjectsAreReleased
+            Debug.WriteLine("--- Dispose MainScreenViewModel");
+            Settings.Instance.SizeChanged -= SettingsOnSizeChanged; // fix MainScreenViewModelTest.NoObjectsLeakedOnEventHandler and AllObjectsAreReleased
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
