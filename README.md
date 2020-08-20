@@ -1,3 +1,7 @@
+JINIXDME: Fixed a bug in test NoObjectsLeakedOnEventHandler
+- Another event handling already exists: JetBrains.ReSharper.TaskRunnerFramework.AssemblyLoader
+- So event handler count in last assert must be 1 not 0   
+
 [![internal JetBrains project](http://jb.gg/badges/internal-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
 # DotMemory Demos

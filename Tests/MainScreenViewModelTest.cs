@@ -32,7 +32,7 @@ namespace Tests
         [Test]
         public void NoObjectsLeakedOnEventHandler()
         {
-            // Another event already exists: JetBrains.ReSharper.TaskRunnerFramework.AssemblyLoader
+            // Another event handling already exists: JetBrains.ReSharper.TaskRunnerFramework.AssemblyLoader
             // --assert pre
             dotMemory.Check(memory =>
                 Assert.That(memory.GetObjects(where => where.
